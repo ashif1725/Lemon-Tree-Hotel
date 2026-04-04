@@ -1,1 +1,124 @@
 
+/* Body & header */
+body{
+    margin:0;
+    padding:0;
+    font-family: Arial, sans-serif;
+    background:#f2f2f2;
+    text-align:center;
+}
+
+header{
+    background:#ff9900;
+    color:white;
+    padding:40px 0;
+    font-size:2em;
+    letter-spacing:1px;
+}
+
+/* Rooms cards in home page */
+.rooms-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    padding:20px;
+}
+
+.room-card{
+    background:white;
+    border-radius:15px;
+    width:300px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    transition:transform 0.3s;
+}
+
+.room-card:hover{
+    transform:scale(1.05);
+}
+
+.room-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-top-left-radius:15px;
+    border-top-right-radius:15px;
+}
+
+.room-info{
+    padding:15px;
+}
+
+.room-info h3{
+    margin:10px 0;
+    font-size:1.2em;
+}
+
+.room-info p{
+    color:#ff6600;
+    font-weight:bold;
+}
+
+.btn{
+    display:inline-block;
+    background:#28a745;
+    color:white;
+    padding:10px 15px;
+    border-radius:8px;
+    text-decoration:none;
+    margin-top:10px;
+}
+
+/* Room gallery page */
+.room-gallery{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+    margin:20px 0;
+}
+
+.room-gallery img{
+    width:45%;
+    height:auto;
+    border-radius:10px;
+    object-fit:cover;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    transition:transform 0.3s;
+}
+
+.room-gallery img:hover{
+    transform:scale(1.05);
+}
+
+ul{
+    list-style:none;
+    padding:0;
+    margin:20px 0;
+}
+
+ul li{
+    background:white;
+    max-width:400px;
+    margin:10px auto;
+    padding:10px 15px;
+    border-radius:10px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.1);
+}
+
+h3{
+    color:#ff6600;
+    margin:20px 0;
+    font-size:1.5em;
+}
+
+/* Responsive */
+@media(max-width:600px){
+    .room-gallery img{
+        width:90%;
+    }
+    .rooms-container{
+        flex-direction:column;
+        align-items:center;
+    }
+}
