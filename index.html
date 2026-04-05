@@ -13,15 +13,23 @@
 <nav class="navbar">
   <h2 class="logo">Lemon Tree Hotel</h2>
 
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="terms.html">Terms</a></li>
-  </ul>
+  <!-- ☰ Menu Button -->
+  <div class="menu-btn">☰</div>
+
+  <!-- Side Menu -->
+  <div class="side-menu">
+    <span class="close-btn">×</span>
+
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="terms.html">Terms</a>
+
+    <button class="book-btn">Book Now</button>
+  </div>
 </nav>
 
-<!-- 🔥 HEADER WITH IMAGE -->
+<!-- 🔥 HERO -->
 <header class="hero">
   <h1>Lemon Tree Hotel</h1>
   <p>Luxury & Premium Rooms</p>
@@ -47,7 +55,6 @@
     </div>
   </div>
 
-  <!-- ✅ FIXED EXECUTIVE ROOM -->
   <div class="room-card">
     <img src="images/executive1.jpg">
     <div class="room-info">
@@ -57,88 +64,45 @@
     </div>
   </div>
 
-  <div class="room-card">
-    <img src="images/family1.jpg">
-    <div class="room-info">
-      <h3>Family Room</h3>
-      <p>₹5500/night</p>
-      <a href="room-family.html" class="btn">View Details</a>
-    </div>
-  </div>
-
-  <div class="room-card">
-    <img src="images/superior1.jpg">
-    <div class="room-info">
-      <h3>Superior Room</h3>
-      <p>₹4800/night</p>
-      <a href="room-superior.html" class="btn">View Details</a>
-    </div>
-  </div>
-
-  <div class="room-card">
-    <img src="images/suite1.jpg">
-    <div class="room-info">
-      <h3>Suite Room</h3>
-      <p>₹7000/night</p>
-      <a href="room-suite.html" class="btn">View Details</a>
-    </div>
-  </div>
-
-  <div class="room-card">
-    <img src="images/honeymoon1.jpg">
-    <div class="room-info">
-      <h3>Honeymoon Room</h3>
-      <p>₹6500/night</p>
-      <a href="room-honeymoon.html" class="btn">View Details</a>
-    </div>
-  </div>
-
-  <div class="room-card">
-    <img src="images/king1.jpg">
-    <div class="room-info">
-      <h3>King Room</h3>
-      <p>₹5800/night</p>
-      <a href="room-king.html" class="btn">View Details</a>
-    </div>
-  </div>
-
-  <div class="room-card">
-    <img src="images/queen1.jpg">
-    <div class="room-info">
-      <h3>Queen Room</h3>
-      <p>₹5700/night</p>
-      <a href="room-queen.html" class="btn">View Details</a>
-    </div>
-  </div>
-
-  <div class="room-card">
-    <img src="images/twin1.jpg">
-    <div class="room-info">
-      <h3>Twin Room</h3>
-      <p>₹4900/night</p>
-      <a href="room-twin.html" class="btn">View Details</a>
-    </div>
-  </div>
-
-  <div class="room-card">
-    <img src="images/double1.jpg">
-    <div class="room-info">
-      <h3>Double Room</h3>
-      <p>₹4600/night</p>
-      <a href="room-double.html" class="btn">View Details</a>
-    </div>
-  </div>
-
-  <div class="room-card">
-    <img src="images/single1.jpg">
-    <div class="room-info">
-      <h3>Single Room</h3>
-      <p>₹4000/night</p>
-      <a href="room-single.html" class="btn">View Details</a>
-    </div>
-  </div>
+  <!-- बाकी same रहने दो -->
 
 </section>
+
+<!-- 🔥 BOOKING FORM -->
+<div class="booking-form">
+  <span class="close-form">×</span>
+
+  <h2>Book Room</h2>
+
+  <input type="date">
+  <input type="date">
+
+  <select>
+    <option>Adults</option>
+    <option>1</option>
+    <option>2</option>
+  </select>
+
+  <select>
+    <option>Children</option>
+    <option>0</option>
+    <option>1</option>
+  </select>
+
+  <select>
+    <option>Select Room</option>
+    <option>Deluxe Room</option>
+    <option>Premium Room</option>
+    <option>Executive Room</option>
+    <option>Family Room</option>
+    <option>Suite Room</option>
+  </select>
+
+  <button>Confirm Booking</button>
+</div>
+
+<!-- 🔥 JS CONNECT -->
+<script src="script.js"></script>
 
 </body>
 </html>
