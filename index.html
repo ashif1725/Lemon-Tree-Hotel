@@ -9,7 +9,7 @@
 
 <body>
 
-<!-- 🔥 NAVBAR START -->
+<!-- 🔥 NAVBAR -->
 <nav class="navbar">
   <h2 class="logo">Lemon Tree Hotel</h2>
 
@@ -20,16 +20,15 @@
     <li><a href="terms.html">Terms</a></li>
   </ul>
 </nav>
-<!-- 🔥 NAVBAR END -->
 
-<header>
-  <h1>Lemon Tree Hotels</h1>
+<!-- 🔥 HEADER WITH IMAGE -->
+<header class="hero">
+  <h1>Lemon Tree Hotel</h1>
   <p>Luxury & Premium Rooms</p>
 </header>
 
 <section class="rooms-container">
 
-  <!-- Rooms -->
   <div class="room-card">
     <img src="images/deluxe1.jpg">
     <div class="room-info">
@@ -48,6 +47,7 @@
     </div>
   </div>
 
+  <!-- ✅ FIXED EXECUTIVE ROOM -->
   <div class="room-card">
     <img src="images/executive1.jpg">
     <div class="room-info">
@@ -139,20 +139,6 @@
   </div>
 
 </section>
-
-<!-- 🔥 SCRIPT सही जगह -->
-<script>
-let slides = document.querySelectorAll(".slide");
-let index = 0;
-
-setInterval(() => {
-  if(slides.length > 0){
-    slides[index].classList.remove("active");
-    index = (index + 1) % slides.length;
-    slides[index].classList.add("active");
-  }
-}, 3000);
-</script>
 
 </body>
 </html>
