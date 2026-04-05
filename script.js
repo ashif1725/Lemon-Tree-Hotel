@@ -1,14 +1,28 @@
-let menu = document.querySelector(".menu-btn");
-let side = document.querySelector(".side-menu");
-let close = document.querySelector(".close-btn");
+function openForm(roomName){
+  document.getElementById("formBox").classList.add("active");
+  document.getElementById("room").value = roomName;
+}
 
-menu.onclick = () => side.classList.add("active");
-close.onclick = () => side.classList.remove("active");
+function closeForm(){
+  document.getElementById("formBox").classList.remove("active");
+}
 
-// Booking
-let bookBtn = document.querySelector(".book-btn");
-let form = document.querySelector(".booking-form");
-let closeForm = document.querySelector(".close-form");
+function sendWhatsApp(){
+  let name = document.getElementById("name").value;
+  let mobile = document.getElementById("mobile").value;
+  let email = document.getElementById("email").value;
+  let date = document.getElementById("date").value;
+  let guests = document.getElementById("guests").value;
+  let room = document.getElementById("room").value;
 
-bookBtn.onclick = () => form.classList.add("active");
-closeForm.onclick = () => form.classList.remove("active");
+  let msg = `Hotel Booking:
+Name: ${name}
+Mobile: ${mobile}
+Email: ${email}
+Date: ${date}
+Guests: ${guests}
+Room: ${room}`;
+
+  let url = "https://wa.me/91XXXXXXXXXX?text=" + encodeURIComponent(msg);
+  window.open(url, "_blank");
+}
