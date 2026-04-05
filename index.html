@@ -15,64 +15,76 @@
   <div class="menu-btn">☰</div>
 </nav>
 
-<!-- 🔥 HERO IMAGE -->
-<section class="hero">
-  <h1>Book Your Stay</h1>
-  <p>Best Luxury Hotel Experience</p>
-</section>
-
-<!-- 🔥 BOOKING BAR -->
-<div class="booking-bar">
-
-  <input type="text" placeholder="Enter City">
-
-  <input type="date">
-  <input type="date">
-
-  <select>
-    <option>Adults</option>
-    <option>1</option>
-    <option>2</option>
-  </select>
-
-  <select>
-    <option>Children</option>
-    <option>0</option>
-    <option>1</option>
-  </select>
-
-  <select>
-    <option>Rooms</option>
-    <option>Deluxe Room</option>
-    <option>Premium Room</option>
-    <option>Executive Room</option>
-  </select>
-
-  <button>Book Now</button>
-</div>
+<!-- 🔥 HERO -->
+<header class="hero">
+  <h1>Welcome to Lemon Tree Hotel</h1>
+  <p>Luxury Rooms & Best Stay</p>
+</header>
 
 <!-- 🔥 ROOMS -->
 <section class="rooms-container">
 
+  <!-- SAME ALL ROOMS -->
   <div class="room-card">
     <img src="images/deluxe1.jpg">
     <h3>Deluxe Room</h3>
     <p>₹4500/night</p>
+    <button onclick="openForm('Deluxe Room')">Book Now</button>
   </div>
 
   <div class="room-card">
     <img src="images/premium1.jpg">
     <h3>Premium Room</h3>
     <p>₹6000/night</p>
+    <button onclick="openForm('Premium Room')">Book Now</button>
   </div>
 
   <div class="room-card">
     <img src="images/executive1.jpg">
     <h3>Executive Room</h3>
     <p>₹5000/night</p>
+    <button onclick="openForm('Executive Room')">Book Now</button>
+  </div>
+
+  <div class="room-card">
+    <img src="images/family1.jpg">
+    <h3>Family Room</h3>
+    <p>₹5500/night</p>
+    <button onclick="openForm('Family Room')">Book Now</button>
+  </div>
+
+  <div class="room-card">
+    <img src="images/suite1.jpg">
+    <h3>Suite Room</h3>
+    <p>₹7000/night</p>
+    <button onclick="openForm('Suite Room')">Book Now</button>
   </div>
 
 </section>
+
+<!-- 🔥 BOOKING POPUP -->
+<div class="booking-form" id="formBox">
+  <span onclick="closeForm()" class="close-form">×</span>
+
+  <h2>Book Room</h2>
+
+  <input type="text" id="name" placeholder="Your Name">
+  <input type="number" id="mobile" placeholder="Mobile Number">
+  <input type="email" id="email" placeholder="Email">
+
+  <input type="date" id="date">
+
+  <select id="guests">
+    <option>Guests</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+  </select>
+
+  <input type="text" id="room" readonly>
+
+  <button onclick="sendWhatsApp()">Confirm Booking</button>
+</div>
 
 <script src="script.js"></script>
 
