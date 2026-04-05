@@ -192,3 +192,16 @@ h3{
         align-items:center;
     }
 }
+.menu-btn {
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  display: block;
+}
+
+/* Right side fix */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
