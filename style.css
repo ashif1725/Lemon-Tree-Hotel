@@ -1,19 +1,71 @@
-/* style.css */
+/* 🔥 BODY */
 body{
     margin:0;
     padding:0;
     font-family: Arial, sans-serif;
     background:#f2f2f2;
     text-align:center;
+    padding-top:70px;
 }
 
+/* 🔥 NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #111;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  z-index: 1000;
+}
+
+.nav-links {   /* ❌ पहले गलत था (dot missing) */
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* 🔥 HERO HEADER (IMAGE BACKGROUND) */
+.hero {
+    height: 400px;
+    background: url('images/hotel.jpg') no-repeat center/cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Dark overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.hero h1, .hero p {
+    position: relative;
+}
+
+/* ❌ पुराना header हट गया */
 header{
-    background:#ff9900;
-    color:white;
-    padding:40px 0;
-    font-size:2em;
+    display:none;
 }
 
+/* 🔥 ROOMS */
 .rooms-container{
     display:flex;
     flex-wrap:wrap;
@@ -55,6 +107,7 @@ header{
     font-weight:bold;
 }
 
+/* 🔥 BUTTON */
 .btn{
     display:inline-block;
     background:#28a745;
@@ -65,6 +118,7 @@ header{
     margin-top:10px;
 }
 
+/* 🔥 GALLERY */
 .room-gallery{
     display:flex;
     flex-wrap:wrap;
@@ -85,6 +139,7 @@ header{
     transform:scale(1.05);
 }
 
+/* 🔥 LIST */
 ul{
     list-style:none;
     padding:0;
@@ -106,15 +161,7 @@ h3{
     font-size:1.5em;
 }
 
-@media(max-width:600px){
-    .room-gallery img{
-        width:90%;
-    }
-    .rooms-container{
-        flex-direction:column;
-        align-items:center;
-    }
-}
+/* 🔥 SLIDER */
 .slider {
   width: 100%;
   height: 300px;
@@ -134,32 +181,14 @@ h3{
 .slide.active {
   opacity: 1;
 }
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #111;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 20px;
-  z-index: 1000;
-}
 
-.nav-links {
-  display: flex;
-  list-style: none;
-}
-
-.nav-links li {
-  margin-left: 20px;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-}
-
-body {
-  padding-top: 70px;
+/* 🔥 MOBILE */
+@media(max-width:600px){
+    .room-gallery img{
+        width:90%;
+    }
+    .rooms-container{
+        flex-direction:column;
+        align-items:center;
+    }
 }
