@@ -1,141 +1,39 @@
-body{
-  margin:0;
-  font-family: Arial;
-  padding-top:70px;
-}
-
-/* NAVBAR */
-.navbar{
-  position:fixed;
-  top:0;
-  width:100%;
-  background:#111;
-  color:white;
-  display:flex;
-  justify-content:space-between;
-  padding:15px;
-}
-
-.menu-btn{
-  font-size:30px;
-  cursor:pointer;
-}
-
 /* HERO */
-.hero{
-  height:400px;
-  background:url('images/hotel.jpg') center/cover;
-  color:white;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-}
-
-/* ROOMS */
-.rooms-container{
-  display:flex;
-  gap:20px;
-  padding:20px;
-  justify-content:center;
-}
-
-.room-card{
-  background:white;
-  padding:10px;
-  border-radius:10px;
-}
-
-/* SIDE MENU */
-.side-menu{
-  position:fixed;
-  right:-100%;
-  top:0;
-  width:250px;
-  height:100%;
-  background:#111;
-  display:flex;
-  flex-direction:column;
-  padding:20px;
-  transition:0.4s;
-}
-
-.side-menu.active{
-  right:0;
-}
-
-.side-menu a{
-  color:white;
-  margin:10px 0;
-}
-
-.close-btn{
-  color:white;
-  cursor:pointer;
-}
-
-/* BOOKING */
-.booking-form{
-  position:fixed;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  background:white;
-  padding:20px;
-  display:none;
-}
-
-.booking-form.active{
-  display:block;
-}
-.menu-btn {
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
-}
-
-/* Desktop पर menu hide */
-@media (min-width: 768px) {
-  .menu-btn {
-    display: none;
-  }
-}
-
-/* Mobile पर nav links hide + menu show */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .menu-btn {
-    display: block;
-  }
-}
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #111;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  z-index: 1000;
-}
-body {
-  padding-top: 70px;
-}
 .hero {
   height: 400px;
-  background: url('images/hotel.jpg') no-repeat center center;
-  background-size: cover;
+  background: url('images/hotel.jpg') center/cover;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
+/* BOOKING BAR */
+.booking-bar {
+  background: white;
+  padding: 15px;
+  margin-top: -50px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.booking-bar input,
+.booking-bar select {
+  padding: 10px;
+}
+
+.booking-bar button {
+  background: orange;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+}
+
+/* ROOMS */
 .rooms-container {
   display: flex;
   flex-wrap: wrap;
@@ -144,22 +42,9 @@ body {
   padding: 20px;
 }
 
-/* Mobile fix */
-@media (max-width: 768px) {
-  .rooms-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .room-card {
-    width: 90%;
-  }
-}
-.room-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-body {
-  padding-top: 70px;
+.room-card {
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
 }
