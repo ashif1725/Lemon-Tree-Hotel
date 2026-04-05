@@ -88,3 +88,38 @@ body{
 .booking-form.active{
   display:block;
 }
+.menu-btn {
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Desktop पर menu hide */
+@media (min-width: 768px) {
+  .menu-btn {
+    display: none;
+  }
+}
+
+/* Mobile पर nav links hide + menu show */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #111;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  z-index: 1000;
+}
