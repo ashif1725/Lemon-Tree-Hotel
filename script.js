@@ -13,3 +13,9 @@ function openRoomPopup(src) {
 function closeRoomPopup() {
   document.getElementById("roomModal").style.display = "none";
 }
+const menuToggle = document.getElementById('mobile-menu');
+const navList = document.querySelector('.nav-list');
+
+menuToggle.addEventListener('click', () => {
+  navList.classList.toggle('active');
+});
