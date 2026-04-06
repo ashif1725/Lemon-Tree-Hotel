@@ -98,3 +98,22 @@ footer { background:#0b3d91; color:#fff; text-align:center; padding:20px; margin
   border-radius:20px;
   font-size:13px;
 }
+.facilities {
+  display:flex;
+  gap:12px;
+  padding:10px;
+  font-size:18px;
+  color:#0099ff;
+}
+
+.facilities i {
+  background:#f1f1f1;
+  padding:10px;
+  border-radius:50%;
+  transition:0.3s;
+}
+
+.facilities i:hover {
+  background:#0099ff;
+  color:#fff;
+}
