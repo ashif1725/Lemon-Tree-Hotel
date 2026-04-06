@@ -1,30 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Deluxe Room</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deluxe Room - Lemon Tree Hotel</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+<header>
+  <div class="logo">Lemon Tree Hotel</div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="room-deluxe.html">Deluxe</a></li>
+      <li><a href="room-deluxeplus.html">Deluxe Plus</a></li>
+      <li><a href="room-family.html">Family</a></li>
+      <li><a href="room-premium.html">Premium</a></li>
+      <li><a href="room-suite.html">Suite</a></li>
+      <li><a href="room-executive.html">Executive</a></li>
+      <li><a href="room-king.html">King</a></li>
+      <li><a href="room-queen.html">Queen</a></li>
+      <li><a href="room-twin.html">Twin</a></li>
+      <li><a href="room-couple.html">Couple</a></li>
+      <li><a href="room-presidential.html">Presidential</a></li>
+      <li><a href="room-villa.html">Villa</a></li>
+      <li><a href="tel:+911234567890" class="btn">Book Now</a></li>
+    </ul>
+    <div class="menu-toggle">☰</div>
+  </nav>
+</header>
 
-<h1>Deluxe Room</h1>
+<section class="room-details">
+  <h1>Deluxe Room</h1>
+  <div class="carousel">
+    <img src="images/deluxe1.jpg" class="carousel-image" alt="Deluxe 1">
+    <img src="images/deluxe2.jpg" class="carousel-image" alt="Deluxe 2">
+    <img src="images/deluxe3.jpg" class="carousel-image" alt="Deluxe 3">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <div class="room-info">
+    <h2>Room Features</h2>
+    <ul>
+      <li>King Size Bed</li>
+      <li>Free Wi-Fi</li>
+      <li>Air Conditioning</li>
+      <li>Room Service</li>
+      <li>Luxury Bathroom</li>
+    </ul>
+    <p>Price: ₹8,500 / Night</p>
+    <a href="tel:+911234567890" class="btn">Book Now</a>
+  </div>
+</section>
 
-<div class="room-gallery">
-  <img src="images/deluxe1.jpg">
-  <img src="images/deluxe2.jpg">
-  <img src="images/deluxe3.jpg">
-</div>
-
-<h3>Facilities</h3>
-<ul>
-  <li>AC Room</li>
-  <li>Free WiFi</li>
-  <li>TV</li>
-</ul>
-
-<button onclick="bookNow('Deluxe Room')" class="btn">Book Now</button>
+<footer>
+  <p>© 2026 Lemon Tree Hotel. All Rights Reserved.</p>
+</footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>
