@@ -1,140 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lemon Tree Hotel</title>
+<title>Hotel Booking</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-body{margin:0;font-family:Arial;background:#f2f2f2;}
-
-/* HEADER */
-.header{
-display:flex;
-align-items:center;
-padding:10px;
-background:#fff;
+body{
+  margin:0;
+  font-family:sans-serif;
+  background:#f2f2f2;
 }
 
-.logo{
-font-size:20px;
-font-weight:bold;
-color:#0099ff;
+.container{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  padding:10px;
 }
 
-/* SEARCH */
-.search{
-flex:1;
-margin-left:10px;
-background:#f1f1f1;
-border-radius:25px;
-padding:8px 15px;
-display:flex;
-align-items:center;
-}
-.search input{
-border:none;
-background:none;
-outline:none;
-flex:1;
-}
-
-/* GRID */
-.rooms{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-padding:10px;
-}
-
-/* CARD */
 .card{
-background:#fff;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+  cursor:pointer;
 }
 
 .card img{
-width:100%;
-height:140px;
-object-fit:cover;
+  width:100%;
+  height:120px;
+  object-fit:cover;
 }
 
-/* BADGE */
 .badge{
-position:absolute;
-top:8px;
-left:8px;
-background:#fff;
-padding:3px 8px;
-border-radius:10px;
-font-size:12px;
+  position:absolute;
+  top:5px;
+  left:5px;
+  background:#fff;
+  padding:3px 6px;
+  border-radius:6px;
+  font-size:12px;
 }
 
 .heart{
-position:absolute;
-top:8px;
-right:8px;
-background:#fff;
-border-radius:50%;
-padding:6px;
+  position:absolute;
+  top:5px;
+  right:5px;
+  background:#fff;
+  padding:5px;
+  border-radius:50%;
 }
 
-/* CONTENT */
-.content{padding:10px;}
-.hotel{font-size:12px;color:#777;}
-.title{font-weight:bold;}
-.location{font-size:12px;color:#999;}
+.content{
+  padding:10px;
+}
 
-/* PRICE */
-.old{color:red;text-decoration:line-through;font-size:12px;}
-.new{font-weight:bold;}
+.hotel img{
+  height:18px;
+}
 
-/* BOTTOM MENU */
+.title{
+  font-weight:bold;
+}
+
+.location{
+  color:gray;
+  font-size:12px;
+}
+
+.old{
+  text-decoration:line-through;
+  color:red;
+  font-size:12px;
+}
+
+.new{
+  font-weight:bold;
+}
+
 .bottom{
-position:fixed;
-bottom:0;
-width:100%;
-background:#6c82a6;
-display:flex;
-justify-content:space-around;
-padding:10px 0;
-border-radius:20px 20px 0 0;
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background:#6c7ea0;
+  display:flex;
+  justify-content:space-around;
+  padding:10px 0;
+  color:#fff;
 }
-.bottom div{color:#fff;text-align:center;font-size:12px;}
-.bottom i{display:block;font-size:18px;margin-bottom:3px;}
+
+.bottom div{
+  text-align:center;
+  font-size:12px;
+}
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<div class="header">
-<div class="logo">Lemon Tree</div>
+<div class="container">
 
-<div class="search">
-<input placeholder="Where to?">
-<i class="fa fa-search"></i>
-</div>
-</div>
-
-<!-- ROOMS -->
-<div class="rooms">
-
-<!-- ROOM TEMPLATE (COPY SAME) -->
-
-<!-- 1 -->
-<div class="card">
+<!-- CARD 1 -->
+<div class="card" onclick="openRoom('Deluxe Room')">
 <div style="position:relative;">
 <img src="images/room1.jpg">
-<div class="badge">⭐ 0.0 (0)</div>
+<div class="badge">⭐⭐⭐⭐☆ (4.2) • 1200 customers</div>
 <div class="heart"><i class="fa fa-heart"></i></div>
 </div>
 <div class="content">
-<div class="hotel">Lemon Tree Hotel</div>
+<div class="hotel"><img src="logo.png"></div>
 <div class="title">Deluxe Room</div>
 <div class="location">India</div>
 <span class="old">₹6280</span>
@@ -142,15 +118,15 @@ border-radius:20px 20px 0 0;
 </div>
 </div>
 
-<!-- 2 -->
-<div class="card">
+<!-- CARD 2 -->
+<div class="card" onclick="openRoom('Deluxe Plus')">
 <div style="position:relative;">
 <img src="images/room2.jpg">
-<div class="badge">⭐ 0.0 (0)</div>
+<div class="badge">⭐⭐⭐⭐⭐ (4.5) • 2200 customers</div>
 <div class="heart"><i class="fa fa-heart"></i></div>
 </div>
 <div class="content">
-<div class="hotel">Lemon Tree Hotel</div>
+<div class="hotel"><img src="logo.png"></div>
 <div class="title">Deluxe Plus</div>
 <div class="location">India</div>
 <span class="old">₹5000</span>
@@ -158,151 +134,61 @@ border-radius:20px 20px 0 0;
 </div>
 </div>
 
-<!-- 3 -->
-<div class="card"><div style="position:relative;">
+<!-- CARD 3 -->
+<div class="card" onclick="openRoom('Family Room')">
+<div style="position:relative;">
 <img src="images/room3.jpg">
-<div class="badge">⭐ 0.0 (0)</div>
+<div class="badge">⭐⭐⭐⭐☆ (4.1) • 1500 customers</div>
 <div class="heart"><i class="fa fa-heart"></i></div>
 </div>
 <div class="content">
-<div class="hotel">Lemon Tree Hotel</div>
+<div class="hotel"><img src="logo.png"></div>
 <div class="title">Family Room</div>
 <div class="location">India</div>
 <span class="old">₹7000</span>
 <span class="new"> ₹3500</span>
-</div></div>
+</div>
+</div>
 
-<!-- 4 -->
-<div class="card"><div style="position:relative;">
+<!-- CARD 4 -->
+<div class="card" onclick="openRoom('Premium Room')">
+<div style="position:relative;">
 <img src="images/room4.jpg">
-<div class="badge">⭐ 0.0 (0)</div>
+<div class="badge">⭐⭐⭐⭐⭐ (4.6) • 3000 customers</div>
 <div class="heart"><i class="fa fa-heart"></i></div>
 </div>
 <div class="content">
-<div class="hotel">Lemon Tree Hotel</div>
+<div class="hotel"><img src="logo.png"></div>
 <div class="title">Premium Room</div>
 <div class="location">India</div>
 <span class="old">₹15500</span>
 <span class="new"> ₹12400</span>
-</div></div>
-
-<!-- 5 -->
-<div class="card"><div style="position:relative;">
-<img src="images/room5.jpg">
-<div class="badge">⭐ 0.0 (0)</div>
-<div class="heart"><i class="fa fa-heart"></i></div>
 </div>
-<div class="content">
-<div class="title">Suite Room</div>
-<span class="old">₹30000</span>
-<span class="new"> ₹25000</span>
-</div></div>
-
-<!-- 6 -->
-<div class="card"><div style="position:relative;">
-<img src="images/room6.jpg">
-<div class="badge">⭐ 0.0 (0)</div>
-<div class="heart"><i class="fa fa-heart"></i></div>
 </div>
-<div class="content">
-<div class="title">Executive Room</div>
-<span class="old">₹20000</span>
-<span class="new"> ₹18500</span>
-</div></div>
 
-<!-- 7 -->
-<div class="card"><div style="position:relative;">
-<img src="images/room7.jpg">
-<div class="badge">⭐ 0.0 (0)</div>
-<div class="heart"><i class="fa fa-heart"></i></div>
 </div>
-<div class="content">
-<div class="title">King Room</div>
-<span class="old">₹25000</span>
-<span class="new"> ₹20000</span>
-</div></div>
 
-<!-- 8 -->
-<div class="card"><div style="position:relative;">
-<img src="images/room8.jpg">
-<div class="badge">⭐ 0.0 (0)</div>
-<div class="heart"><i class="fa fa-heart"></i></div>
-</div>
-<div class="content">
-<div class="title">Queen Room</div>
-<span class="old">₹23000</span>
-<span class="new"> ₹19000</span>
-</div></div>
-
-<!-- 9 -->
-<div class="card"><div style="position:relative;">
-<img src="images/room9.jpg">
-<div class="badge">⭐ 0.0 (0)</div>
-<div class="heart"><i class="fa fa-heart"></i></div>
-</div>
-<div class="content">
-<div class="title">Twin Room</div>
-<span class="old">₹15000</span>
-<span class="new"> ₹13000</span>
-</div></div>
-
-<!-- 10 -->
-<div class="card"><div style="position:relative;">
-<img src="images/room10.jpg">
-<div class="badge">⭐ 0.0 (0)</div>
-<div class="heart"><i class="fa fa-heart"></i></div>
-</div>
-<div class="content">
-<div class="title">Couple Room</div>
-<span class="old">₹18000</span>
-<span class="new"> ₹14000</span>
-</div></div>
-
-<!-- 11 -->
-<div class="card"><div style="position:relative;">
-<img src="images/room11.jpg">
-<div class="badge">⭐ 0.0 (0)</div>
-<div class="heart"><i class="fa fa-heart"></i></div>
-</div>
-<div class="content">
-<div class="title">Presidential</div>
-<span class="old">₹50000</span>
-<span class="new"> ₹40000</span>
-</div></div>
-
-<!-- 12 -->
-<div class="card"><div style="position:relative;">
-<img src="images/room12.jpg">
-<div class="badge">⭐ 0.0 (0)</div>
-<div class="heart"><i class="fa fa-heart"></i></div>
-</div>
-<div class="content">
-<div class="title">Villa</div>
-<span class="old">₹45000</span>
-<span class="new"> ₹35000</span>
-</div></div>
-
-<!-- 13 -->
-<div class="card"><div style="position:relative;">
-<img src="images/room13.jpg">
-<div class="badge">⭐ 0.0 (0)</div>
-<div class="heart"><i class="fa fa-heart"></i></div>
-</div>
-<div class="content">
-<div class="title">Luxury AC</div>
-<span class="old">₹3711</span>
-<span class="new"> ₹1299</span>
-</div></div>
-
+<!-- CONTACT -->
+<div style="padding:20px; background:#fff; margin-bottom:60px;">
+<h3>Contact</h3>
+<p>📍 India</p>
+<p>✉️ info@lemontreehotel.com</p>
+<p>📞 +91 7509797627</p>
 </div>
 
 <!-- BOTTOM MENU -->
 <div class="bottom">
-<div><i class="fa fa-home"></i>Home</div>
-<div><i class="fa fa-heart"></i>Favourite</div>
-<div><i class="fa fa-user-plus"></i>Vendor</div>
-<div><i class="fa fa-user"></i>Login</div>
+<div><i class="fa fa-home"></i><br>Home</div>
+<div><i class="fa fa-heart"></i><br>Favourite</div>
+<div><i class="fa fa-user-plus"></i><br>Vendor</div>
+<div><i class="fa fa-user"></i><br>Login</div>
 </div>
+
+<script>
+function openRoom(room){
+  alert("Opening " + room);
+}
+</script>
 
 </body>
 </html>
