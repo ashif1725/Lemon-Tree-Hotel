@@ -100,73 +100,7 @@ body{
 
 <body>
 
-<div class="container">
-
-<!-- CARD 1 -->
-<div class="card" onclick="openRoom('Deluxe Room')">
-<div style="position:relative;">
-<img src="images/room1.jpg">
-<div class="badge">⭐⭐⭐⭐☆ (4.2) • 1200 customers</div>
-<div class="heart"><i class="fa fa-heart"></i></div>
-</div>
-<div class="content">
-<div class="hotel"><img src="logo.png"></div>
-<div class="title">Deluxe Room</div>
-<div class="location">India</div>
-<span class="old">₹6280</span>
-<span class="new"> ₹2199</span>
-</div>
-</div>
-
-<!-- CARD 2 -->
-<div class="card" onclick="openRoom('Deluxe Plus')">
-<div style="position:relative;">
-<img src="images/room2.jpg">
-<div class="badge">⭐⭐⭐⭐⭐ (4.5) • 2200 customers</div>
-<div class="heart"><i class="fa fa-heart"></i></div>
-</div>
-<div class="content">
-<div class="hotel"><img src="logo.png"></div>
-<div class="title">Deluxe Plus</div>
-<div class="location">India</div>
-<span class="old">₹5000</span>
-<span class="new"> ₹2500</span>
-</div>
-</div>
-
-<!-- CARD 3 -->
-<div class="card" onclick="openRoom('Family Room')">
-<div style="position:relative;">
-<img src="images/room3.jpg">
-<div class="badge">⭐⭐⭐⭐☆ (4.1) • 1500 customers</div>
-<div class="heart"><i class="fa fa-heart"></i></div>
-</div>
-<div class="content">
-<div class="hotel"><img src="logo.png"></div>
-<div class="title">Family Room</div>
-<div class="location">India</div>
-<span class="old">₹7000</span>
-<span class="new"> ₹3500</span>
-</div>
-</div>
-
-<!-- CARD 4 -->
-<div class="card" onclick="openRoom('Premium Room')">
-<div style="position:relative;">
-<img src="images/room4.jpg">
-<div class="badge">⭐⭐⭐⭐⭐ (4.6) • 3000 customers</div>
-<div class="heart"><i class="fa fa-heart"></i></div>
-</div>
-<div class="content">
-<div class="hotel"><img src="logo.png"></div>
-<div class="title">Premium Room</div>
-<div class="location">India</div>
-<span class="old">₹15500</span>
-<span class="new"> ₹12400</span>
-</div>
-</div>
-
-</div>
+<div class="container" id="roomContainer"></div>
 
 <!-- CONTACT -->
 <div style="padding:20px; background:#fff; margin-bottom:60px;">
@@ -185,6 +119,58 @@ body{
 </div>
 
 <script>
+// 13 ROOMS DATA
+const rooms = [
+  {name:"Deluxe Room", price:2199, old:6280, img:"images/room1.jpg"},
+  {name:"Deluxe Plus", price:2500, old:5000, img:"images/room2.jpg"},
+  {name:"Family Room", price:3500, old:7000, img:"images/room3.jpg"},
+  {name:"Premium Room", price:12400, old:15500, img:"images/room4.jpg"},
+  {name:"Suite Room", price:25000, old:30000, img:"images/room5.jpg"},
+  {name:"Executive Room", price:18500, old:20000, img:"images/room6.jpg"},
+  {name:"King Room", price:20000, old:25000, img:"images/room7.jpg"},
+  {name:"Queen Room", price:19000, old:23000, img:"images/room8.jpg"},
+  {name:"Twin Room", price:13000, old:15000, img:"images/room9.jpg"},
+  {name:"Couple Room", price:14000, old:18000, img:"images/room10.jpg"},
+  {name:"Presidential", price:40000, old:50000, img:"images/room11.jpg"},
+  {name:"Villa", price:35000, old:45000, img:"images/room12.jpg"},
+  {name:"Luxury AC", price:1299, old:3711, img:"images/room13.jpg"}
+];
+
+// RANDOM FUNCTION
+function random(min,max){
+  return Math.floor(Math.random()*(max-min)+min);
+}
+
+// GENERATE ROOMS
+const container = document.getElementById("roomContainer");
+
+rooms.forEach(room=>{
+  let rating = (Math.random()*1+4).toFixed(1); // 4–5
+  let customers = random(500,3500);
+
+  let stars = "⭐".repeat(Math.floor(rating));
+
+  let card = `
+  <div class="card" onclick="openRoom('${room.name}')">
+    <div style="position:relative;">
+      <img src="${room.img}">
+      <div class="badge">${stars} (${rating}) • ${customers} customers</div>
+      <div class="heart"><i class="fa fa-heart"></i></div>
+    </div>
+    <div class="content">
+      <div class="hotel"><img src="logo.png"></div>
+      <div class="title">${room.name}</div>
+      <div class="location">India</div>
+      <span class="old">₹${room.old}</span>
+      <span class="new"> ₹${room.price}</span>
+    </div>
+  </div>
+  `;
+
+  container.innerHTML += card;
+});
+
+// CLICK FUNCTION
 function openRoom(room){
   alert("Opening " + room);
 }
