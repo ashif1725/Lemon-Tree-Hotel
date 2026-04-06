@@ -12,7 +12,7 @@ const nextBtn = document.querySelector('.next');
 const prevBtn = document.querySelector('.prev');
 
 function showSlide(n){
-  slides.forEach((slide, i)=> slide.classList.remove('active'));
+  slides.forEach(slide => slide.classList.remove('active'));
   slideIndex = (n + slides.length) % slides.length;
   slides[slideIndex].classList.add('active');
 }
