@@ -1,116 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lemon Tree Hotel</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium World Class Hotel</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Header / Navbar -->
+  <header>
+    <div class="logo">Premium Hotel</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="room-premium.html">Rooms</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="tel:+911234567890" class="btn">Book Now</a></li>
+      </ul>
+      <div class="menu-toggle">☰</div>
+    </nav>
+  </header>
 
-<header>
-  <div class="logo">Lemon Tree Hotel</div>
-  <nav>
-    <ul>
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#rooms">Rooms</a></li>
-      <li><a href="https://wa.me/917509797627?text=Hello%2C%20I%20want%20to%20book%20a%20room" target="_blank">Book Now</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="menu-toggle">☰</div>
-  </nav>
-</header>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to Premium World Class Hotel</h1>
+    <p>Experience luxury like never before</p>
+    <a href="room-premium.html" class="btn">View Rooms</a>
+  </section>
 
-<section class="hero" id="hero">
-  <h1>Welcome to Lemon Tree Hotel</h1>
-  <a href="#rooms" class="btn">View Rooms</a>
-</section>
-
-<section class="rooms" id="rooms">
-
-<!-- Example Room Card -->
-<div class="room-card">
-  <div class="carousel" id="carousel10">
-    <img src="images/king/king1.jpg" alt="King Room">
-    <img src="images/king/king2.jpg" alt="King Room">
-    <img src="images/king/king3.jpg" alt="King Room">
-    <div class="carousel-controls">
-      <span onclick="prevSlide(10)">&#10094;</span>
-      <span onclick="nextSlide(10)">&#10095;</span>
+  <!-- Featured Rooms -->
+  <section class="rooms">
+    <h2>Our Premium Rooms</h2>
+    <div class="room-cards">
+      <div class="room-card">
+        <img src="images/premium1.jpg" alt="Premium Room 1">
+        <h3>Deluxe Room</h3>
+        <p>$250 / Night</p>
+        <a href="room-premium.html" class="btn">View Details</a>
+      </div>
+      <div class="room-card">
+        <img src="images/premium2.jpg" alt="Premium Room 2">
+        <h3>Family Room</h3>
+        <p>$350 / Night</p>
+        <a href="room-premium.html" class="btn">View Details</a>
+      </div>
+      <div class="room-card">
+        <img src="images/premium3.jpg" alt="Premium Room 3">
+        <h3>Suite Room</h3>
+        <p>$500 / Night</p>
+        <a href="room-premium.html" class="btn">View Details</a>
+      </div>
     </div>
-  </div>
-  <div class="room-info">
-    <h3>King</h3>
-    <p>AC, Wi-Fi, TV, Breakfast, King Size Bed</p>
-    <div class="price">₹5500 / night</div>
-    <a href="https://wa.me/917509797627?text=Hello%2C%20I%20want%20to%20book%20King%20Room" target="_blank">View Details</a>
-  </div>
-</div>
+  </section>
 
-<!-- Room 11: Queen -->
-<div class="room-card">
-  <div class="carousel" id="carousel11">
-    <img src="images/queen/queen1.jpg" alt="Queen Room">
-    <img src="images/queen/queen2.jpg" alt="Queen Room">
-    <img src="images/queen/queen3.jpg" alt="Queen Room">
-    <div class="carousel-controls">
-      <span onclick="prevSlide(11)">&#10094;</span>
-      <span onclick="nextSlide(11)">&#10095;</span>
-    </div>
-  </div>
-  <div class="room-info">
-    <h3>Queen</h3>
-    <p>AC, Wi-Fi, TV, Breakfast, Queen Size Bed</p>
-    <div class="price">₹5000 / night</div>
-    <a href="https://wa.me/917509797627?text=Hello%2C%20I%20want%20to%20book%20Queen%20Room" target="_blank">View Details</a>
-  </div>
-</div>
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Premium World Class Hotel. All Rights Reserved.</p>
+    <p>Contact: +91 1234567890 | Email: info@premiumhotel.com</p>
+  </footer>
 
-<!-- Room 12: Luxury -->
-<div class="room-card">
-  <div class="carousel" id="carousel12">
-    <img src="images/luxury/luxury1.jpg" alt="Luxury Room">
-    <img src="images/luxury/luxury2.jpg" alt="Luxury Room">
-    <img src="images/luxury/luxury3.jpg" alt="Luxury Room">
-    <div class="carousel-controls">
-      <span onclick="prevSlide(12)">&#10094;</span>
-      <span onclick="nextSlide(12)">&#10095;</span>
-    </div>
-  </div>
-  <div class="room-info">
-    <h3>Luxury</h3>
-    <p>AC, Wi-Fi, TV, Breakfast, Premium Services</p>
-    <div class="price">₹6000 / night</div>
-    <a href="https://wa.me/917509797627?text=Hello%2C%20I%20want%20to%20book%20Luxury%20Room" target="_blank">View Details</a>
-  </div>
-</div>
-
-<!-- Room 13: Presidential -->
-<div class="room-card">
-  <div class="carousel" id="carousel13">
-    <img src="images/presidential/presidential1.jpg" alt="Presidential Room">
-    <img src="images/presidential/presidential2.jpg" alt="Presidential Room">
-    <img src="images/presidential/presidential3.jpg" alt="Presidential Room">
-    <div class="carousel-controls">
-      <span onclick="prevSlide(13)">&#10094;</span>
-      <span onclick="nextSlide(13)">&#10095;</span>
-    </div>
-  </div>
-  <div class="room-info">
-    <h3>Presidential</h3>
-    <p>AC, Wi-Fi, TV, Breakfast, VIP Services</p>
-    <div class="price">₹12000 / night</div>
-    <a href="https://wa.me/917509797627?text=Hello%2C%20I%20want%20to%20book%20Presidential%20Room" target="_blank">View Details</a>
-  </div>
-</div>
-
-</section>
-
-<footer>
-  &copy; 2026 Lemon Tree Hotel. All Rights Reserved.
-</footer>
-
-<script src="js/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
