@@ -1,1 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lemon Tree Hotel</title>
+<style>
+/* --- General Styles --- */
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f2f2f2; }
+header { background:#ffcc00; padding:15px 20px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:1000; }
+header .logo { font-size:1.8em; font-weight:bold; }
+nav ul { display:flex; list-style:none; margin:0; padding:0; flex-wrap:wrap; }
+nav ul li { margin-left:15px; }
+nav ul li a { text-decoration:none; color:#000; font-weight:600; }
+.menu-toggle { display:none; font-size:1.5em; cursor:pointer; }
+section { padding:20px; max-width:1200px; margin:auto; margin-bottom:30px; background:#fff; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1); }
+h1,h2,h3 { color:#ff6600; }
+.rooms { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+.room-card { background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 4px 8px rgba(0,0,0,0.1); text-align:center; padding-bottom:15px; }
+.room-card img { width:100%; height:180px; object-fit:cover; }
+.room-card h3 { margin:10px 0 5px; }
+.room-card p { font-weight:bold; margin:5px 0; }
+.room-card a { display:block; margin-top:10px; padding:10px; background:#25D366; color:#fff; text-decoration:none; font-weight:bold; border-radius:8px; }
+footer { text-align:center; padding:15px; background:#ffcc00; margin-top:20px; font-weight:bold; }
+/* --- Responsive --- */
+@media(max-width:768px){ nav ul{ display:none; flex-direction:column; } .menu-toggle{ display:block; } }
+</style>
+</head>
+<body>
 
+<header>
+<div class="logo">Lemon Tree Hotel</div>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="room-deluxe.html">Deluxe</a></li>
+<li><a href="room-deluxeplus.html">Deluxe Plus</a></li>
+<li><a href="room-family.html">Family</a></li>
+<li><a href="room-premium.html">Premium</a></li>
+<li><a href="room-suite.html">Suite</a></li>
+<li><a href="room-executive.html">Executive</a></li>
+<li><a href="room-king.html">King</a></li>
+<li><a href="room-queen.html">Queen</a></li>
+<li><a href="room-twin.html">Twin</a></li>
+<li><a href="room-couple.html">Couple</a></li>
+<li><a href="room-presidential.html">Presidential</a></li>
+<li><a href="room-villa.html">Villa</a></li>
+<li><a href="https://wa.me/917509797627" target="_blank">Book Now</a></li>
+</ul>
+<div class="menu-toggle">☰</div>
+</nav>
+</header>
+
+<section>
+<h1>Welcome to Lemon Tree Hotel</h1>
+<p style="text-align:center; font-size:18px;">World Class Luxury & Comfort</p>
+<p style="text-align:center;"><a href="room-deluxe.html" style="padding:12px 20px; background:#ff6600; color:#fff; text-decoration:none; font-weight:bold; border-radius:8px;">View Rooms</a></p>
+</section>
+
+<section>
+<h2>Our Rooms</h2>
+<div class="rooms">
+<!-- Room Card Template -->
+<div class="room-card">
+<img src="images/deluxe1.jpg" alt="Deluxe Room">
+<h3>Deluxe Room</h3>
+<p>₹8,500 / Night</p>
+<a href="room-deluxe.html">View Details</a>
+<a href="https://wa.me/917509797627?text=Hi,%20I%20want%20to%20book%20Deluxe%20Room" target="_blank">Book Now</a>
+</div>
+
+<div class="room-card">
+<img src="images/deluxeplus1.jpg" alt="Deluxe Plus Room">
+<h3>Deluxe Plus Room</h3>
+<p>₹10,000 / Night</p>
+<a href="room-deluxeplus.html">View Details</a>
+<a href="https://wa.me/917509797627?text=Hi,%20I%20want%20to%20book%20Deluxe%20Plus%20Room" target="_blank">Book Now</a>
+</div>
+
+<div class="room-card">
+<img src="images/family1.jpg" alt="Family Room">
+<h3>Family Room</h3>
+<p>₹12,000 / Night</p>
+<a href="room-family.html">View Details</a>
+<a href="https://wa.me/917509797627?text=Hi,%20I%20want%20to%20book%20Family%20Room" target="_blank">Book Now</a>
+</div>
+
+<div class="room-card">
+<img src="images/premium1.jpg" alt="Premium Room">
+<h3>Premium Room</h3>
+<p>₹15,500 / Night</p>
+<a href="room-premium.html">View Details</a>
+<a href="https://wa.me/917509797627?text=Hi,%20I%20want%20to%20book%20Premium%20Room" target="_blank">Book Now</a>
+</div>
+
+<div class="room-card">
+<img src="images/suite1.jpg" alt="Suite Room">
+<h3>Suite Room</h3>
+<p>₹25,000 / Night</p>
+<a href="room-suite.html">View Details</a>
+<a href="https://wa.me/917509797627?text=Hi,%20I%20want%20to%20book%20Suite%20Room" target="_blank">Book Now</a>
+</div>
+
+<div class="room-card">
+<img src="images/executive1.jpg" alt="Executive Room">
+<h3>Executive Room</h3>
+<p>₹18,500 / Night</p>
+<a href="room-executive.html">View Details</a>
+<a href="https://wa.me/917509797627?text=Hi,%20I%20want%20to%20book%20Executive%20Room" target="_blank">Book Now</a>
+</div>
+
+<div class="room-card">
+<img src="images/king1.jpg" alt="King Room">
+<h3>King Room</h3>
+<p>₹20,000 / Night</p>
+<a href="room-king.html">View Details</a>
+<a href="https://wa.me/917509797627?text=Hi,%20I%20want%20to%20book%20King%20Room" target="_blank">Book Now</a>
+</div>
+
+<div class="room-card">
+<img src="images/queen1.jpg" alt="Queen Room">
+<h3>Queen Room</h3>
+<p>₹19,000 / Night</p>
+<a href="room-queen.html">View Details</a>
+<a href="https://wa.me/917509797627?text=Hi,%20I%20want%20to%20book%20Queen%20Room" target="_blank">Book Now</a>
+</div>
+
+<div class="room-card">
+<img src="images/twin1.jpg" alt="Twin Room">
+<h3>Twin Room</h3>
+<p>₹13,000 / Night</p>
+<a href="room-twin.html">View Details</a>
+<a href="https://wa.me/917509797627?text=Hi,%20I%20want%20to%20book%20Twin%20Room" target="_blank">Book Now</a>
+</div>
+
+<div class="room-card">
+<img src="images/couple1.jpg" alt="Couple Room">
+<h3>Couple Room</h3>
+<p>₹14,000 / Night</p>
+<a href="room-couple.html">View Details</a>
+<a href="https://wa.me/917509797627?text=Hi,%20I%20want%20to%20book%20Couple%20Room" target="_blank">Book Now</a>
+</div>
+
+<div class="room-card">
+<img src="images/presidential1.jpg" alt="Presidential Room">
+<h3>Presidential Room</h3>
+<p>₹40,000 / Night</p>
+<a href="room-presidential.html">View Details</a>
+<a href="https://wa.me/917509797627?text=Hi,%20I%20want%20to%20book%20Presidential%20Room" target="_blank">Book Now</a>
+</div>
+
+<div class="room-card">
+<img src="images/villa1.jpg" alt="Villa Room">
+<h3>Villa Room</h3>
+<p>₹35,000 / Night</p>
+<a href="room-villa.html">View Details</a>
+<a href="https://wa.me/917509797627?text=Hi,%20I%20want%20to%20book%20Villa%20Room" target="_blank">Book Now</a>
+</div>
+
+</div>
+</section>
+
+<footer>
+<p>© 2026 Lemon Tree Hotel. All Rights Reserved.</p>
+<p>Contact: +917509797627 | Email: info@lemontreehotel.com</p>
+</footer>
+
+<script>
+// Menu toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const navUl = document.querySelector('nav ul');
+menuToggle.addEventListener('click', ()=>{ navUl.classList.toggle('active'); });
+</script>
+
+</body>
+</html>
