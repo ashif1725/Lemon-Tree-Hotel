@@ -59,3 +59,63 @@ menuToggle.addEventListener('click', () => {
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lemon Tree Hotel</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="logo">Lemon Tree Hotel</div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="room-premium.html">Rooms</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="menu-toggle">☰</div>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Welcome to Lemon Tree Hotel</h1>
+  <p>Experience luxury & comfort at the heart of the city</p>
+  <a href="room-premium.html" class="btn">Book Now</a>
+</section>
+
+<!-- Rooms Preview -->
+<section class="rooms">
+  <div class="room-card">
+    <img src="images/premium/premium1.jpg" alt="Premium Room">
+    <div class="room-info">
+      <h3>Premium Room</h3>
+      <p>AC, Wi-Fi, TV, Breakfast</p>
+      <div class="price">₹3000 / night</div>
+      <a href="room-premium.html">View Details</a>
+    </div>
+  </div>
+  <!-- Copy card for remaining 12 rooms with images -->
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; 2026 Lemon Tree Hotel. All Rights Reserved.
+</footer>
+
+<script>
+const menuToggle = document.querySelector('.menu-toggle');
+const navUl = document.querySelector('nav ul');
+menuToggle.addEventListener('click', () => {
+  navUl.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>
