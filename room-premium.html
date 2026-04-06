@@ -1,302 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lemon Tree Hotel - Rooms</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-.carousel {position:relative; overflow:hidden; border-radius:10px; margin-bottom:10px;}
-.carousel img {width:100%; height:250px; object-fit:cover; display:none;}
-.carousel-controls {position:absolute; top:50%; width:100%; display:flex; justify-content:space-between; transform:translateY(-50%);}
-.carousel-controls span {background:rgba(0,0,0,0.5); color:#fff; padding:10px; cursor:pointer; border-radius:50%;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Rooms - Premium Hotel</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <div class="logo">Premium Hotel</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="room-premium.html">Rooms</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="tel:+911234567890" class="btn">Book Now</a></li>
+      </ul>
+      <div class="menu-toggle">☰</div>
+    </nav>
+  </header>
 
-<header>
-  <div class="logo">Lemon Tree Hotel</div>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="room-premium.html">Rooms</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="menu-toggle">☰</div>
-  </nav>
-</header>
-
-<section class="rooms">
-
-<!-- Room 1: Premium Room -->
-<div class="room-card">
-  <div class="carousel" id="carousel1">
-    <img src="images/premium/premium1.jpg" alt="Premium Room">
-    <img src="images/premium/premium2.jpg" alt="Premium Room">
-    <img src="images/premium/premium3.jpg" alt="Premium Room">
-    <div class="carousel-controls">
-      <span onclick="prevSlide(1)">&#10094;</span>
-      <span onclick="nextSlide(1)">&#10095;</span>
+  <section class="room-details">
+    <h1>Deluxe Premium Room</h1>
+    <div class="carousel">
+      <img src="images/premium1.jpg" alt="Premium Room 1" class="carousel-image">
+      <img src="images/premium2.jpg" alt="Premium Room 2" class="carousel-image">
+      <img src="images/premium3.jpg" alt="Premium Room 3" class="carousel-image">
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
     </div>
-  </div>
-  <div class="room-info">
-    <h3>Premium Room</h3>
-    <p>AC, Wi-Fi, TV, Breakfast</p>
-    <div class="price">₹3000 / night</div>
-    <a href="#">Book Now</a>
-  </div>
-</div>
-
-<!-- Room 2: Deluxe Room -->
-<div class="room-card">
-  <div class="carousel" id="carousel2">
-    <img src="images/deluxe/deluxe1.jpg" alt="Deluxe Room">
-    <img src="images/deluxe/deluxe2.jpg" alt="Deluxe Room">
-    <img src="images/deluxe/deluxe3.jpg" alt="Deluxe Room">
-    <div class="carousel-controls">
-      <span onclick="prevSlide(2)">&#10094;</span>
-      <span onclick="nextSlide(2)">&#10095;</span>
+    <div class="room-info">
+      <h2>Room Features</h2>
+      <ul>
+        <li>King Size Bed</li>
+        <li>Free Wi-Fi</li>
+        <li>Private Balcony with Sea View</li>
+        <li>24/7 Room Service</li>
+        <li>Luxury Bathroom with Jacuzzi</li>
+      </ul>
+      <p>Price: $250 / Night</p>
+      <a href="tel:+911234567890" class="btn">Book Now</a>
     </div>
-  </div>
-  <div class="room-info">
-    <h3>Deluxe Room</h3>
-    <p>AC, Wi-Fi, TV, Breakfast, Balcony</p>
-    <div class="price">₹3500 / night</div>
-    <a href="#">Book Now</a>
-  </div>
-</div>
+  </section>
 
-<!-- Room 3: Family Room -->
-<div class="room-card">
-  <div class="carousel" id="carousel3">
-    <img src="images/family/family1.jpg" alt="Family Room">
-    <img src="images/family/family2.jpg" alt="Family Room">
-    <img src="images/family/family3.jpg" alt="Family Room">
-    <div class="carousel-controls">
-      <span onclick="prevSlide(3)">&#10094;</span>
-      <span onclick="nextSlide(3)">&#10095;</span>
-    </div>
-  </div>
-  <div class="room-info">
-    <h3>Family Room</h3>
-    <p>AC, Wi-Fi, TV, Breakfast, Sofa Bed</p>
-    <div class="price">₹4000 / night</div>
-    <a href="#">Book Now</a>
-  </div>
-</div>
+  <footer>
+    <p>© 2026 Premium World Class Hotel. All Rights Reserved.</p>
+  </footer>
 
-<!-- Room 4: Suite Room -->
-<div class="room-card">
-  <div class="carousel" id="carousel4">
-    <img src="images/suite/suite1.jpg" alt="Suite Room">
-    <img src="images/suite/suite2.jpg" alt="Suite Room">
-    <img src="images/suite/suite3.jpg" alt="Suite Room">
-    <div class="carousel-controls">
-      <span onclick="prevSlide(4)">&#10094;</span>
-      <span onclick="nextSlide(4)">&#10095;</span>
-    </div>
-  </div>
-  <div class="room-info">
-    <h3>Suite Room</h3>
-    <p>AC, Wi-Fi, TV, Breakfast, Living Area, Balcony</p>
-    <div class="price">₹5000 / night</div>
-    <a href="#">Book Now</a>
-  </div>
-</div>
-
-<!-- Room 5: Honeymoon Room -->
-<div class="room-card">
-  <div class="carousel" id="carousel5">
-    <img src="images/honeymoon/honeymoon1.jpg" alt="Honeymoon Room">
-    <img src="images/honeymoon/honeymoon2.jpg" alt="Honeymoon Room">
-    <img src="images/honeymoon/honeymoon3.jpg" alt="Honeymoon Room">
-    <div class="carousel-controls">
-      <span onclick="prevSlide(5)">&#10094;</span>
-      <span onclick="nextSlide(5)">&#10095;</span>
-    </div>
-  </div>
-  <div class="room-info">
-    <h3>Honeymoon Room</h3>
-    <p>AC, Wi-Fi, TV, Breakfast, Romantic Decor</p>
-    <div class="price">₹4500 / night</div>
-    <a href="#">Book Now</a>
-  </div>
-</div>
-
-<!-- Room 6: Executive Room -->
-<div class="room-card">
-  <div class="carousel" id="carousel6">
-    <img src="images/executive/executive1.jpg" alt="Executive Room">
-    <img src="images/executive/executive2.jpg" alt="Executive Room">
-    <img src="images/executive/executive3.jpg" alt="Executive Room">
-    <div class="carousel-controls">
-      <span onclick="prevSlide(6)">&#10094;</span>
-      <span onclick="nextSlide(6)">&#10095;</span>
-    </div>
-  </div>
-  <div class="room-info">
-    <h3>Executive Room</h3>
-    <p>AC, Wi-Fi, TV, Breakfast, Work Desk</p>
-    <div class="price">₹3800 / night</div>
-    <a href="#">Book Now</a>
-  </div>
-</div>
-
-<!-- Room 7: Twin Room -->
-<div class="room-card">
-  <div class="carousel" id="carousel7">
-    <img src="images/twin/twin1.jpg" alt="Twin Room">
-    <img src="images/twin/twin2.jpg" alt="Twin Room">
-    <img src="images/twin/twin3.jpg" alt="Twin Room">
-    <div class="carousel-controls">
-      <span onclick="prevSlide(7)">&#10094;</span>
-      <span onclick="nextSlide(7)">&#10095;</span>
-    </div>
-  </div>
-  <div class="room-info">
-    <h3>Twin Room</h3>
-    <p>AC, Wi-Fi, TV, Breakfast, Two Beds</p>
-    <div class="price">₹3200 / night</div>
-    <a href="#">Book Now</a>
-  </div>
-</div>
-
-<!-- Room 8: Single Room -->
-<div class="room-card">
-  <div class="carousel" id="carousel8">
-    <img src="images/single/single1.jpg" alt="Single Room">
-    <img src="images/single/single2.jpg" alt="Single Room">
-    <img src="images/single/single3.jpg" alt="Single Room">
-    <div class="carousel-controls">
-      <span onclick="prevSlide(8)">&#10094;</span>
-      <span onclick="nextSlide(8)">&#10095;</span>
-    </div>
-  </div>
-  <div class="room-info">
-    <h3>Single Room</h3>
-    <p>AC, Wi-Fi, TV, Breakfast</p>
-    <div class="price">₹2500 / night</div>
-    <a href="#">Book Now</a>
-  </div>
-</div>
-
-<!-- Room 9: Couple Room -->
-<div class="room-card">
-  <div class="carousel" id="carousel9">
-    <img src="images/couple/couple1.jpg" alt="Couple Room">
-    <img src="images/couple/couple2.jpg" alt="Couple Room">
-    <img src="images/couple/couple3.jpg" alt="Couple Room">
-    <div class="carousel-controls">
-      <span onclick="prevSlide(9)">&#10094;</span>
-      <span onclick="nextSlide(9)">&#10095;</span>
-    </div>
-  </div>
-  <div class="room-info">
-    <h3>Couple Room</h3>
-    <p>AC, Wi-Fi, TV, Breakfast, Double Bed</p>
-    <div class="price">₹3000 / night</div>
-    <a href="#">Book Now</a>
-  </div>
-</div>
-
-<!-- Room 10: King Room -->
-<div class="room-card">
-  <div class="carousel" id="carousel10">
-    <img src="images/king/king1.jpg" alt="King Room">
-    <img src="images/king/king2.jpg" alt="King Room">
-    <img src="images/king/king3.jpg" alt="King Room">
-    <div class="carousel-controls">
-      <span onclick="prevSlide(10)">&#10094;</span>
-      <span onclick="nextSlide(10)">&#10095;</span>
-    </div>
-  </div>
-  <div class="room-info">
-    <h3>King Room</h3>
-    <p>AC, Wi-Fi, TV, Breakfast, King Bed</p>
-    <div class="price">₹4800 / night</div>
-    <a href="#">Book Now</a>
-  </div>
-</div>
-
-<!-- Room 11: Queen Room -->
-<div class="room-card">
-  <div class="carousel" id="carousel11">
-    <img src="images/queen/queen1.jpg" alt="Queen Room">
-    <img src="images/queen/queen2.jpg" alt="Queen Room">
-    <img src="images/queen/queen3.jpg" alt="Queen Room">
-    <div class="carousel-controls">
-      <span onclick="prevSlide(11)">&#10094;</span>
-      <span onclick="nextSlide(11)">&#10095;</span>
-    </div>
-  </div>
-  <div class="room-info">
-    <h3>Queen Room</h3>
-    <p>AC, Wi-Fi, TV, Breakfast, Queen Bed</p>
-    <div class="price">₹4300 / night</div>
-    <a href="#">Book Now</a>
-  </div>
-</div>
-
-<!-- Room 12: Luxury Suite -->
-<div class="room-card">
-  <div class="carousel" id="carousel12">
-    <img src="images/luxury/luxury1.jpg" alt="Luxury Suite">
-    <img src="images/luxury/luxury2.jpg" alt="Luxury Suite">
-    <img src="images/luxury/luxury3.jpg" alt="Luxury Suite">
-    <div class="carousel-controls">
-      <span onclick="prevSlide(12)">&#10094;</span>
-      <span onclick="nextSlide(12)">&#10095;</span>
-    </div>
-  </div>
-  <div class="room-info">
-    <h3>Luxury Suite</h3>
-    <p>AC, Wi-Fi, TV, Breakfast, Jacuzzi, Balcony</p>
-    <div class="price">₹6000 / night</div>
-    <a href="#">Book Now</a>
-  </div>
-</div>
-
-<!-- Room 13: Presidential Suite -->
-<div class="room-card">
-  <div class="carousel" id="carousel13">
-    <img src="images/presidential/presidential1.jpg" alt="Presidential Suite">
-    <img src="images/presidential/presidential2.jpg" alt="Presidential Suite">
-    <img src="images/presidential/presidential3.jpg" alt="Presidential Suite">
-    <div class="carousel-controls">
-      <span onclick="prevSlide(13)">&#10094;</span>
-      <span onclick="nextSlide(13)">&#10095;</span>
-    </div>
-  </div>
-  <div class="room-info">
-    <h3>Presidential Suite</h3>
-    <p>AC, Wi-Fi, TV, Breakfast, Jacuzzi, Private Lounge</p>
-    <div class="price">₹10000 / night</div>
-    <a href="#">Book Now</a>
-  </div>
-</div>
-
-</section>
-
-<footer>
-  &copy; 2026 Lemon Tree Hotel. All Rights Reserved.
-</footer>
-
-<script>
-const menuToggle = document.querySelector('.menu-toggle');
-const navUl = document.querySelector('nav ul');
-menuToggle.addEventListener('click', ()=>{navUl.classList.toggle('active');});
-
-/* Carousel JS */
-let slideIndex = {};
-function showSlide(id,n){const slides=document.querySelectorAll(`#carousel${id} img`);
-if(!slideIndex[id]) slideIndex[id]=0;
-slideIndex[id]=(n+slides.length)%slides.length;
-slides.forEach((slide,i)=>slide.style.display=(i===slideIndex[id]?'block':'none'));}
-function nextSlide(id){showSlide(id,slideIndex[id]+1);}
-function prevSlide(id){showSlide(id,slideIndex[id]-1);}
-for(let i=1;i<=13;i++){showSlide(i,0);}
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
