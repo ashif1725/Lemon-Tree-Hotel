@@ -6,13 +6,15 @@
 <title>Lemon Tree Hotel – Premium Rooms</title>
 <link rel="stylesheet" href="style.css">
 <style>
+/* --- General Body & Header --- */
 body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f2f2f2; }
 header { background:#ffcc00; padding:15px; display:flex; justify-content:space-between; align-items:center; color:#000; position:sticky; top:0; z-index:1000; }
 header .logo { font-size:1.8em; font-weight:bold; }
-nav ul { display:flex; list-style:none; margin:0; padding:0; flex-wrap:wrap; }
+nav ul { display:flex; list-style:none; margin:0; padding:0; }
 nav ul li { margin-left:15px; }
 nav ul li a { text-decoration:none; color:#000; font-weight:600; }
 .menu-toggle { display:none; font-size:1.5em; cursor:pointer; }
+/* --- Room Section --- */
 .room-details { padding:20px; max-width:1200px; margin:auto; margin-bottom:30px; background:#fff; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1); }
 .room-details h1 { text-align:center; margin-bottom:15px; color:#ff6600; }
 .carousel { position:relative; overflow:hidden; border-radius:10px; margin-bottom:20px; }
@@ -20,12 +22,14 @@ nav ul li a { text-decoration:none; color:#000; font-weight:600; }
 .carousel img.active { display:block; }
 .carousel button { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.5); color:#fff; border:none; padding:10px; cursor:pointer; border-radius:50%; }
 .carousel .prev { left:10px; } .carousel .next { right:10px; }
+/* --- Facilities --- */
 .room-info { padding:15px; }
 .room-info h2 { text-align:center; margin-bottom:15px; color:#ff6600; }
 .facilities { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
 .facility-card { flex:1 1 45%; background:linear-gradient(135deg,#ffcc00,#ff9900); color:#fff; padding:10px; border-radius:8px; text-align:center; font-weight:bold; box-shadow:0 4px 6px rgba(0,0,0,0.2); }
 .btn { display:block; width:100%; text-align:center; padding:12px; background:#25D366; color:#fff; font-size:18px; font-weight:bold; border:none; border-radius:8px; margin-top:20px; text-decoration:none; }
 footer { text-align:center; padding:15px; background:#ffcc00; margin-top:20px; font-weight:bold; }
+/* --- Responsive --- */
 @media(max-width:768px){ nav ul{ display:none; flex-direction:column; } .menu-toggle{ display:block; } .facility-card{ flex:1 1 100%; } .carousel img{ height:200px; } }
 </style>
 </head>
@@ -54,7 +58,7 @@ footer { text-align:center; padding:15px; background:#ffcc00; margin-top:20px; f
 </header>
 
 <!-- ===== 13 Rooms Sections ===== -->
-<!-- Room 1 – Deluxe -->
+<!-- Room Template Example: Room ID must be unique -->
 <section id="room1" class="room-details">
 <h1>Deluxe Room</h1>
 <div class="carousel">
@@ -83,7 +87,6 @@ footer { text-align:center; padding:15px; background:#ffcc00; margin-top:20px; f
 </div>
 </section>
 
-<!-- Room 2 – Deluxe Plus -->
 <section id="room2" class="room-details">
 <h1>Deluxe Plus Room</h1>
 <div class="carousel">
@@ -112,70 +115,7 @@ footer { text-align:center; padding:15px; background:#ffcc00; margin-top:20px; f
 </div>
 </section>
 
-<!-- Room 3 – Family -->
-<section id="room3" class="room-details">
-<h1>Family Room</h1>
-<div class="carousel">
-<img src="images/family1.jpg" class="active" alt="Family 1">
-<img src="images/family2.jpg" alt="Family 2">
-<img src="images/family3.jpg" alt="Family 3">
-<button class="prev">&#10094;</button>
-<button class="next">&#10095;</button>
-</div>
-<div class="room-info">
-<h2>Room Facilities</h2>
-<div class="facilities">
-<div class="facility-card">Two Queen Size Beds</div>
-<div class="facility-card">Air Conditioning</div>
-<div class="facility-card">Free Wi-Fi</div>
-<div class="facility-card">Flat Screen TV</div>
-<div class="facility-card">Mini Bar</div>
-<div class="facility-card">Tea/Coffee Maker</div>
-<div class="facility-card">Room Service</div>
-<div class="facility-card">Luxury Bathroom</div>
-<div class="facility-card">Daily Housekeeping</div>
-<div class="facility-card">Seating Area</div>
-<div class="facility-card">Balcony Garden View</div>
-</div>
-<p style="text-align:center; font-size:18px; font-weight:bold;">Price: ₹12,000 / Night</p>
-<a href="https://wa.me/917509797627?text=Hi,%20I%20want%20to%20book%20Family%20Room%20at%20Lemon%20Tree%20Hotel" target="_blank" class="btn">Book Now</a>
-</div>
-</section>
-
-<!-- Room 4 – Premium -->
-<section id="room4" class="room-details">
-<h1>Premium Room</h1>
-<div class="carousel">
-<img src="images/premium1.jpg" class="active" alt="Premium 1">
-<img src="images/premium2.jpg" alt="Premium 2">
-<img src="images/premium3.jpg" alt="Premium 3">
-<img src="images/premium4.jpg" alt="Premium 4">
-<button class="prev">&#10094;</button>
-<button class="next">&#10095;</button>
-</div>
-<div class="room-info">
-<h2>Room Facilities</h2>
-<div class="facilities">
-<div class="facility-card">King Size Bed</div>
-<div class="facility-card">Air Conditioning</div>
-<div class="facility-card">Free Wi-Fi</div>
-<div class="facility-card">Flat Screen TV</div>
-<div class="facility-card">Mini Bar</div>
-<div class="facility-card">Tea/Coffee Maker</div>
-<div class="facility-card">Room Service</div>
-<div class="facility-card">Luxury Bathroom</div>
-<div class="facility-card">Daily Housekeeping</div>
-<div class="facility-card">Balcony City View</div>
-<div class="facility-card">Seating Area</div>
-<div class="facility-card">Work Desk</div>
-</div>
-<p style="text-align:center; font-size:18px; font-weight:bold;">Price: ₹15,500 / Night</p>
-<a href="https://wa.me/917509797627?text=Hi,%20I%20want%20to%20book%20Premium%20Room%20at%20Lemon%20Tree%20Hotel" target="_blank" class="btn">Book Now</a>
-</div>
-</section>
-
-<!-- Room 5 to Room 13 follow same pattern -->
-<!-- Replace image src, room name, facilities and price accordingly -->
+<!-- Repeat similar sections for room3 to room13 -->
 
 <footer>
 <p>© 2026 Lemon Tree Hotel. All Rights Reserved.</p>
