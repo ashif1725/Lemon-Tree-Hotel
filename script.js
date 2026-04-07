@@ -85,3 +85,35 @@ rooms.forEach(room=>{
 });
 
 </script>
+<script>
+function openMenu(){
+  document.getElementById("sideMenu").classList.add("active");
+}
+
+function closeMenu(){
+  document.getElementById("sideMenu").classList.remove("active");
+}
+</script>
+<script>
+// 🔥 Firebase Config (example - apna replace karna)
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+};
+
+firebase.initializeApp(firebaseConfig);
+
+// GOOGLE LOGIN
+function loginWithGoogle(){
+  const provider = new firebase.auth.GoogleAuthProvider();
+
+  firebase.auth().signInWithPopup(provider)
+  .then((result)=>{
+    let user = result.user;
+    alert("Welcome " + user.displayName);
+  })
+  .catch((error)=>{
+    alert(error.message);
+  });
+}
+</script>
