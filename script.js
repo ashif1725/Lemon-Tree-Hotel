@@ -1,119 +1,113 @@
-<script>
+const allTimezones = Intl.supportedValuesOf("timeZone");
 
-// 📦 ROOMS DATA (13 Rooms)
-const rooms = [
-  {name:"Deluxe Room", price:2199, old:6280, img:"images/room1.jpg"},
-  {name:"Deluxe Plus", price:2500, old:5000, img:"images/room2.jpg"},
-  {name:"Family Room", price:3500, old:7000, img:"images/room3.jpg"},
-  {name:"Premium Room", price:12400, old:15500, img:"images/room4.jpg"},
-  {name:"Suite Room", price:25000, old:30000, img:"images/room5.jpg"},
-  {name:"Executive Room", price:18500, old:20000, img:"images/room6.jpg"},
-  {name:"King Room", price:20000, old:25000, img:"images/room7.jpg"},
-  {name:"Queen Room", price:19000, old:23000, img:"images/room8.jpg"},
-  {name:"Twin Room", price:13000, old:15000, img:"images/room9.jpg"},
-  {name:"Couple Room", price:14000, old:18000, img:"images/room10.jpg"},
-  {name:"Presidential", price:40000, old:50000, img:"images/room11.jpg"},
-  {name:"Villa", price:35000, old:45000, img:"images/room12.jpg"},
-  {name:"Luxury AC", price:1299, old:3711, img:"images/room13.jpg"}
-];
+let savedCities = JSON.parse(localStorage.getItem("cities")) || ["Asia/Kolkata"];
 
-// 🔢 RANDOM FUNCTION
-function random(min,max){
-  return Math.floor(Math.random()*(max-min)+min);
-}
+const container = document.getElementById("clockContainer");
 
-// ❤️ FAVOURITE TOGGLE
-function toggleFav(event, el){
-  event.stopPropagation(); // card click na ho
-  el.classList.toggle("active");
-}
+// Create clock UI
+function renderClocks() {
+  container.innerHTML = "";
 
-// 📲 WHATSAPP BOOKING FUNCTION (ROOM CLICK)
-function openRoom(room){
-  let number = "917509797627"; // +91 number
-  let message = "Hello, I want to book " + room;
+  savedCities.forEach((zone, index) => {
+    const div = document.createElement("div");
+    div.className = "clock";
 
-  let url = "https://wa.me/" + number + "?text=" + encodeURIComponent(message);
-  window.open(url, "_blank");
-}
+    div.innerHTML = `
+      <span class="remove" onclick="removeCity(${index})">❌</span>
+      <div class="city">${zone}</div>
+      <div class="time" id="time-${index}"></div>
+      <canvas id="clock-${index}" width="120" height="120"></canvas>
+    `;
 
-// 📲 MENU WHATSAPP BUTTON
-function openWhatsApp(){
-  let number = "917509797627";
-  let message = "Hello, I want to book a room";
-
-  let url = "https://wa.me/" + number + "?text=" + encodeURIComponent(message);
-  window.open(url, "_blank");
-}
-
-// 🏨 GENERATE ALL ROOMS
-const container = document.getElementById("roomContainer");
-
-rooms.forEach(room=>{
-  let rating = (Math.random()*1+4).toFixed(1); // 4–5
-  let customers = random(500,3500);
-
-  let stars = "⭐".repeat(Math.floor(rating));
-
-  let card = `
-  <div class="card" onclick="openRoom('${room.name}')">
-    <div style="position:relative;">
-      <img src="${room.img}">
-      <div class="badge">${stars} (${rating}) • ${customers} customers</div>
-
-      <div class="heart" onclick="toggleFav(event,this)">
-        <i class="fa fa-heart"></i>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="hotel">
-        <img src="logo.png">
-      </div>
-
-      <div class="title">${room.name}</div>
-
-      <div class="location">India</div>
-
-      <span class="old">₹${room.old}</span>
-      <span class="new"> ₹${room.price}</span>
-    </div>
-  </div>
-  `;
-
-  container.innerHTML += card;
-});
-
-</script>
-<script>
-function openMenu(){
-  document.getElementById("sideMenu").classList.add("active");
-}
-
-function closeMenu(){
-  document.getElementById("sideMenu").classList.remove("active");
-}
-</script>
-<script>
-// 🔥 Firebase Config (example - apna replace karna)
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-};
-
-firebase.initializeApp(firebaseConfig);
-
-// GOOGLE LOGIN
-function loginWithGoogle(){
-  const provider = new firebase.auth.GoogleAuthProvider();
-
-  firebase.auth().signInWithPopup(provider)
-  .then((result)=>{
-    let user = result.user;
-    alert("Welcome " + user.displayName);
-  })
-  .catch((error)=>{
-    alert(error.message);
+    container.appendChild(div);
   });
 }
-</script>
+
+function updateClocks() {
+  savedCities.forEach((zone, index) => {
+    const now = new Date();
+
+    const time = now.toLocaleTimeString("en-US", {
+      timeZone: zone,
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit"
+    });
+
+    document.getElementById(`time-${index}`).textContent = time;
+
+    drawAnalogClock(`clock-${index}`, new Date(now.toLocaleString("en-US", { timeZone: zone })));
+  });
+}
+
+// Analog clock
+function drawAnalogClock(id, date) {
+  const canvas = document.getElementById(id);
+  if (!canvas) return;
+
+  const ctx = canvas.getContext("2d");
+  const radius = canvas.width / 2;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  ctx.translate(radius, radius);
+
+  ctx.beginPath();
+  ctx.arc(0, 0, radius - 5, 0, 2 * Math.PI);
+  ctx.stroke();
+
+  let hour = date.getHours();
+  let minute = date.getMinutes();
+  let second = date.getSeconds();
+
+  hour = hour % 12;
+
+  drawHand(ctx, (hour * Math.PI / 6), radius * 0.5, 4);
+  drawHand(ctx, (minute * Math.PI / 30), radius * 0.7, 3);
+  drawHand(ctx, (second * Math.PI / 30), radius * 0.9, 2);
+
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+}
+
+function drawHand(ctx, pos, length, width) {
+  ctx.beginPath();
+  ctx.lineWidth = width;
+  ctx.moveTo(0, 0);
+  ctx.rotate(pos);
+  ctx.lineTo(0, -length);
+  ctx.stroke();
+  ctx.rotate(-pos);
+}
+
+// Add city
+function addCity() {
+  const input = document.getElementById("search").value.trim();
+
+  const match = allTimezones.find(tz => 
+    tz.toLowerCase().includes(input.toLowerCase())
+  );
+
+  if (match && !savedCities.includes(match)) {
+    savedCities.push(match);
+    localStorage.setItem("cities", JSON.stringify(savedCities));
+    renderClocks();
+  } else {
+    alert("City not found or already added");
+  }
+}
+
+// Remove city
+function removeCity(index) {
+  savedCities.splice(index, 1);
+  localStorage.setItem("cities", JSON.stringify(savedCities));
+  renderClocks();
+}
+
+// Theme toggle
+function toggleTheme() {
+  document.body.classList.toggle("light");
+}
+
+// Init
+renderClocks();
+setInterval(updateClocks, 1000);
+updateClocks();
