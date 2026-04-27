@@ -1,198 +1,29 @@
-<!-- HEADER -->
-<div class="header">
-  <img src="logo.png" class="logo">
-
-  <div class="menu-btn" onclick="openMenu()">☰<br><small>Menu</small></div>
-</div>
-
-<!-- SIDE MENU -->
-<div id="sideMenu" class="side-menu">
-  <div class="close" onclick="closeMenu()">✖</div>
-
-  <div class="menu-item">English</div>
-  <div class="menu-item" onclick="loginWithGoogle()">Log in</div>
-  <div class="menu-item">Manage booking</div>
-  <div class="menu-item">Business</div>
-  <div class="menu-item">Discover</div>
-</div>
 <!DOCTYPE html>
-<html>
-<head><script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hotel Booking</title>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<style>
-body{
-  margin:0;
-  font-family:sans-serif;
-  background:#f2f2f2;
-}
-
-.container{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-  padding:10px;
-}
-
-.card{
-  background:#fff;
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow:0 2px 6px rgba(0,0,0,0.1);
-  cursor:pointer;
-}
-
-.card img{
-  width:100%;
-  height:120px;
-  object-fit:cover;
-}
-
-.badge{
-  position:absolute;
-  top:5px;
-  left:5px;
-  background:#fff;
-  padding:3px 6px;
-  border-radius:6px;
-  font-size:12px;
-}
-
-.heart{
-  position:absolute;
-  top:5px;
-  right:5px;
-  background:#fff;
-  padding:5px;
-  border-radius:50%;
-}
-
-.content{
-  padding:10px;
-}
-
-.hotel img{
-  height:18px;
-}
-
-.title{
-  font-weight:bold;
-}
-
-.location{
-  color:gray;
-  font-size:12px;
-}
-
-.old{
-  text-decoration:line-through;
-  color:red;
-  font-size:12px;
-}
-
-.new{
-  font-weight:bold;
-}
-
-.bottom{
-  position:fixed;
-  bottom:0;
-  width:100%;
-  background:#6c7ea0;
-  display:flex;
-  justify-content:space-around;
-  padding:10px 0;
-  color:#fff;
-}
-
-.bottom div{
-  text-align:center;
-  font-size:12px;
-}
-</style>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Clock Pro+</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="container" id="roomContainer"></div>
+<header>
+  <h1>🌍 World Clock Pro+</h1>
 
-<!-- CONTACT -->
-<div style="padding:20px; background:#fff; margin-bottom:60px;">
-<h3>Contact</h3>
-<p>📍 India</p>
-<p>✉️ info@lemontreehotel.com</p>
-<p>📞 +91 7509797627</p>
-</div>
-
-<!-- BOTTOM MENU -->
-<div class="bottom">
-<div><i class="fa fa-home"></i><br>Home</div>
-<div><i class="fa fa-heart"></i><br>Favourite</div>
-<div><i class="fa fa-user-plus"></i><br>Vendor</div>
-<div><i class="fa fa-user"></i><br>Login</div>
-</div>
-<script src="script.js"></script>
-<script>
-// 13 ROOMS DATA
-const rooms = [
-  {name:"Deluxe Room", price:2199, old:6280, img:"images/room1.jpg"},
-  {name:"Deluxe Plus", price:2500, old:5000, img:"images/room2.jpg"},
-  {name:"Family Room", price:3500, old:7000, img:"images/room3.jpg"},
-  {name:"Premium Room", price:12400, old:15500, img:"images/room4.jpg"},
-  {name:"Suite Room", price:25000, old:30000, img:"images/room5.jpg"},
-  {name:"Executive Room", price:18500, old:20000, img:"images/room6.jpg"},
-  {name:"King Room", price:20000, old:25000, img:"images/room7.jpg"},
-  {name:"Queen Room", price:19000, old:23000, img:"images/room8.jpg"},
-  {name:"Twin Room", price:13000, old:15000, img:"images/room9.jpg"},
-  {name:"Couple Room", price:14000, old:18000, img:"images/room10.jpg"},
-  {name:"Presidential", price:40000, old:50000, img:"images/room11.jpg"},
-  {name:"Villa", price:35000, old:45000, img:"images/room12.jpg"},
-  {name:"Luxury AC", price:1299, old:3711, img:"images/room13.jpg"}
-];
-
-// RANDOM FUNCTION
-function random(min,max){
-  return Math.floor(Math.random()*(max-min)+min);
-}
-
-// GENERATE ROOMS
-const container = document.getElementById("roomContainer");
-
-rooms.forEach(room=>{
-  let rating = (Math.random()*1+4).toFixed(1); // 4–5
-  let customers = random(500,3500);
-
-  let stars = "⭐".repeat(Math.floor(rating));
-
-  let card = `
-  <div class="card" onclick="openRoom('${room.name}')">
-    <div style="position:relative;">
-      <img src="${room.img}">
-      <div class="badge">${stars} (${rating}) • ${customers} customers</div>
-      <div class="heart"><i class="fa fa-heart"></i></div>
-    </div>
-    <div class="content">
-      <div class="hotel"><img src="logo.png"></div>
-      <div class="title">${room.name}</div>
-      <div class="location">India</div>
-      <span class="old">₹${room.old}</span>
-      <span class="new"> ₹${room.price}</span>
-    </div>
+  <div class="controls">
+    <input type="text" id="search" placeholder="Search city...">
+    <button onclick="addCity()">Add</button>
+    <button onclick="toggleTheme()">🌙</button>
   </div>
-  `;
+</header>
 
-  container.innerHTML += card;
-});
+<div id="clockContainer" class="container"></div>
 
-// CLICK FUNCTION
-function openRoom(room){
-  alert("Opening " + room);
-}
-</script>
+<footer>
+  <p>© 2026 Advanced World Clock</p>
+</footer>
 
+<script src="script.js"></script>
 </body>
 </html>
